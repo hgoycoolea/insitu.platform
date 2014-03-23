@@ -93,6 +93,8 @@
   <ItemGroup>
     <Compile Include="concrete\CategoriasLogic.cs" />
     <Compile Include="concrete\ClientesLogics.cs" />
+    <Compile Include="concrete\CategoriasClientesLogic.cs" />
+    <Compile Include="concrete\MembresiasLogic.cs" />
     <Compile Include="concrete\VisitasLogics.cs" />
     <Compile Include="concrete\VentasLogics.cs" />
     <Compile Include="concrete\ItemProductosLogics.cs" />

@@ -66,6 +66,9 @@
     <Content Include="AcknowledgePosition.ashx" />
     <Content Include="ReadPositions.ashx" />
     <Content Include="GetRutas.ashx" />
+    <Content Include="ReadRutas.ashx" />
+    <Content Include="GetPositions.ashx" />
+    <Content Include="AcknowledgeRutas.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

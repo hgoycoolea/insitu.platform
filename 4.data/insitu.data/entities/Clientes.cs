@@ -30,6 +30,11 @@ namespace insitu.data.entities
         /// 
         /// </summary>
         [DataMember]
+        public int Sexo { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
         public string Nombre { get; set; }
         /// <summary>
         /// 

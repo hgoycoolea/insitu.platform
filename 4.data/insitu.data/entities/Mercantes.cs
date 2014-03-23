@@ -80,21 +80,31 @@ namespace insitu.data.entities
         /// 
         /// </summary>
         [DataMember]
-        public string UrlLogo { get; set; }
+        public string UrlImageLogo { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public string UrlBanner { get; set; }
+        public string UrlImageBanner { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public string UrlBiografia { get; set; }
+        public string UrlImageBiografia { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public string UrlImageHome { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
         public int Categoria { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public int Membresia { get; set; }
     }
 }

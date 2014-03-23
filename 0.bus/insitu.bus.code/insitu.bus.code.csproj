@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcknowledgePosition.cs" />
+    <Compile Include="AcknowledgeRutas.cs" />
+    <Compile Include="ReadRutas.cs" />
+    <Compile Include="GetPositions.cs" />
     <Compile Include="ReadPositions.cs" />
     <Compile Include="GetRutas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

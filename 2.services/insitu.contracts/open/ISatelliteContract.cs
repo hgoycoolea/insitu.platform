@@ -20,7 +20,15 @@ namespace insitu.contracts.open
         /// <param name="cliente"></param>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void AcknowledgePosition(string axis, int cliente);
+        void AcknowledgePosition(string axis, int mercante);
+        /// <summary>
+        /// Ingresa la rutas desde un celular
+        /// </summary>
+        /// <param name="axis"></param>
+        /// <param name="cliente"></param>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        void AcknowledgeRutas(string axis, int cliente);
         /// <summary>
         /// Metodo que obtiene la ruta de un Mercante
         /// </summary>
@@ -28,14 +36,30 @@ namespace insitu.contracts.open
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Rutas GetRutas(int Mercante);
+        Rutas GetRutas(int ID);
         /// <summary>
-        /// Lee todas las posiciones de un cliente
+        /// Metodo que obtiene la positions de un Mercante
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Positions GetPositions(int ID);
+        /// <summary>
+        /// Lee todas las posiciones dado un mercante
         /// </summary>
         /// <param name="Cliente"></param>
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<Positions> ReadPositions(int Cliente);
+        List<Positions> ReadPositions(int Mercante);
+        /// <summary>
+        /// Lee todas las rutas de un cliente
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Rutas> ReadRutas(int Cliente);
     }
 }

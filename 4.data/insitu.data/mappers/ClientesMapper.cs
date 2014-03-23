@@ -19,7 +19,8 @@ namespace insitu.data.mappers
                 ID = int.Parse(parent["ID"].ToString()),
                 Nombre = parent["Nombre"].ToString(),
                 NumeroTelefono = parent["NumeroTelefono"].ToString(),
-                UUID = parent["UUID"].ToString()
+                UUID = parent["UUID"].ToString(), 
+                Sexo = int.Parse(parent["Sexo"].ToString())
             };
         }
     }

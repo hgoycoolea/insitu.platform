@@ -25,9 +25,11 @@ namespace insitu.data.mappers
                 Numero = parent["Numero"].ToString(),
                 Pais = int.Parse(parent["Pais"].ToString()),
                 Telefono = parent["Telefono"].ToString(),
-                UrlBanner = parent["UrlBanner"].ToString(),
-                UrlBiografia = parent["UrlBiografia"].ToString(),
-                UrlLogo = parent["UrlLogo"].ToString(),
+                UrlImageBanner = parent["UrlImageBanner"].ToString(),
+                UrlImageBiografia = parent["UrlImageBiografia"].ToString(),
+                UrlImageLogo = parent["UrlImageLogo"].ToString(),
+                UrlImageHome = parent["UrlImageHome"].ToString(),
+                Membresia = int.Parse(parent["Membresia"].ToString()),
                 UUID = parent["UUID"].ToString(),
                 WebSite = parent["WebSite"].ToString()
             };
