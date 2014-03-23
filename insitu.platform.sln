@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.bus", "0.bus", "{782D0F92-14E3-4EFC-82C0-9CB1017EB06E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.host", "1.host", "{BB2FFDAC-9FCC-41C8-B0A4-3C0699B17EE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.services", "2.services", "{019C9560-EFFA-4EFA-8522-17324C8456CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.business", "3.business", "{2BBC6FFA-1FAB-4C3F-A1E8-D2DA98228F17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.data", "4.data", "{6A82EF7B-0141-4B67-9277-2624F9AD1338}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.presenters", "5.presenters", "{77CA5CB3-4E4C-4F01-BA17-9BA0D400EDA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.data", "4.data\insitu.data\insitu.data.csproj", "{EE8AF065-EF1E-4EC7-B51E-A90124E896CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.business", "3.business\insitu.business\insitu.business.csproj", "{44A10F59-CCC7-4D86-8F83-D57FC683DA67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.contracts", "2.services\insitu.contracts\insitu.contracts.csproj", "{B10AB1DD-BA0B-463F-BF5A-E14921DB0284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.services", "2.services\insitu.services\insitu.services.csproj", "{0C9A826C-5C6C-41E7-AC67-FBA3E5450709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.host", "1.host\insitu.host\insitu.host.csproj", "{BC7BB627-A13F-46B2-A9A2-40DA5BC66599}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.web", "5.presenters\insitu.web\insitu.web.csproj", "{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.web.code", "5.presenters\insitu.web.code\insitu.web.code.csproj", "{81ED7E9D-0E05-4AF6-AE68-48326AB33741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.bus.code", "0.bus\insitu.bus.code\insitu.bus.code.csproj", "{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insitu.bus", "0.bus\insitu.bus\insitu.bus.csproj", "{AD42678F-36F3-4E6B-AC13-40324B244586}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8AF065-EF1E-4EC7-B51E-A90124E896CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8AF065-EF1E-4EC7-B51E-A90124E896CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8AF065-EF1E-4EC7-B51E-A90124E896CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8AF065-EF1E-4EC7-B51E-A90124E896CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A10F59-CCC7-4D86-8F83-D57FC683DA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A10F59-CCC7-4D86-8F83-D57FC683DA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A10F59-CCC7-4D86-8F83-D57FC683DA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A10F59-CCC7-4D86-8F83-D57FC683DA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10AB1DD-BA0B-463F-BF5A-E14921DB0284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10AB1DD-BA0B-463F-BF5A-E14921DB0284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10AB1DD-BA0B-463F-BF5A-E14921DB0284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10AB1DD-BA0B-463F-BF5A-E14921DB0284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C9A826C-5C6C-41E7-AC67-FBA3E5450709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C9A826C-5C6C-41E7-AC67-FBA3E5450709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C9A826C-5C6C-41E7-AC67-FBA3E5450709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C9A826C-5C6C-41E7-AC67-FBA3E5450709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7BB627-A13F-46B2-A9A2-40DA5BC66599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7BB627-A13F-46B2-A9A2-40DA5BC66599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7BB627-A13F-46B2-A9A2-40DA5BC66599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7BB627-A13F-46B2-A9A2-40DA5BC66599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81ED7E9D-0E05-4AF6-AE68-48326AB33741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81ED7E9D-0E05-4AF6-AE68-48326AB33741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81ED7E9D-0E05-4AF6-AE68-48326AB33741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81ED7E9D-0E05-4AF6-AE68-48326AB33741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD42678F-36F3-4E6B-AC13-40324B244586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD42678F-36F3-4E6B-AC13-40324B244586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD42678F-36F3-4E6B-AC13-40324B244586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD42678F-36F3-4E6B-AC13-40324B244586}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E5ED7DF-CD25-4682-AE41-B20BF81E03B5} = {782D0F92-14E3-4EFC-82C0-9CB1017EB06E}
+		{AD42678F-36F3-4E6B-AC13-40324B244586} = {782D0F92-14E3-4EFC-82C0-9CB1017EB06E}
+		{BC7BB627-A13F-46B2-A9A2-40DA5BC66599} = {BB2FFDAC-9FCC-41C8-B0A4-3C0699B17EE4}
+		{B10AB1DD-BA0B-463F-BF5A-E14921DB0284} = {019C9560-EFFA-4EFA-8522-17324C8456CC}
+		{0C9A826C-5C6C-41E7-AC67-FBA3E5450709} = {019C9560-EFFA-4EFA-8522-17324C8456CC}
+		{44A10F59-CCC7-4D86-8F83-D57FC683DA67} = {2BBC6FFA-1FAB-4C3F-A1E8-D2DA98228F17}
+		{EE8AF065-EF1E-4EC7-B51E-A90124E896CC} = {6A82EF7B-0141-4B67-9277-2624F9AD1338}
+		{A07EC27C-E9BD-4EB2-B12E-5325EB1AA945} = {77CA5CB3-4E4C-4F01-BA17-9BA0D400EDA1}
+		{81ED7E9D-0E05-4AF6-AE68-48326AB33741} = {77CA5CB3-4E4C-4F01-BA17-9BA0D400EDA1}
+	EndGlobalSection
+EndGlobal

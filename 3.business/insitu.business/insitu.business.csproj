@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44A10F59-CCC7-4D86-8F83-D57FC683DA67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>insitu.business</RootNamespace>
+    <AssemblyName>insitu.business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Libraries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cl.maia.business.facades">
+      <HintPath>..\..\Libraries\cl.maia.business.facades.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.business.injectors">
+      <HintPath>..\..\Libraries\cl.maia.business.injectors.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.core">
+      <HintPath>..\..\Libraries\cl.maia.core.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.core.payments">
+      <HintPath>..\..\Libraries\cl.maia.core.payments.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data">
+      <HintPath>..\..\Libraries\cl.maia.data.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.core">
+      <HintPath>..\..\Libraries\cl.maia.data.core.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.mappers">
+      <HintPath>..\..\Libraries\cl.maia.data.mappers.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.procedures">
+      <HintPath>..\..\Libraries\cl.maia.data.procedures.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.wrappers">
+      <HintPath>..\..\Libraries\cl.maia.data.wrappers.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.mail">
+      <HintPath>..\..\Libraries\cl.maia.mail.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.security">
+      <HintPath>..\..\Libraries\cl.maia.security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\Libraries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\Libraries\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\Libraries\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Libraries\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\Libraries\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\Libraries\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="concrete\CategoriasLogic.cs" />
+    <Compile Include="concrete\ClientesLogics.cs" />
+    <Compile Include="concrete\VisitasLogics.cs" />
+    <Compile Include="concrete\VentasLogics.cs" />
+    <Compile Include="concrete\ItemProductosLogics.cs" />
+    <Compile Include="concrete\MercantesLogics.cs" />
+    <Compile Include="concrete\PositionsLogics.cs" />
+    <Compile Include="concrete\ProductosLogics.cs" />
+    <Compile Include="concrete\PromocionesLogics.cs" />
+    <Compile Include="concrete\RutasLogics.cs" />
+    <Compile Include="partial\SatelliteLogics.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\4.data\insitu.data\insitu.data.csproj">
+      <Project>{ee8af065-ef1e-4ec7-b51e-a90124e896cc}</Project>
+      <Name>insitu.data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="abstract\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
