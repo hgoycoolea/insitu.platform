@@ -23,7 +23,8 @@ namespace insitu.data.mappers
                 Porcentaje = int.Parse(parent["Porcentaje"].ToString()),
                 Producto = int.Parse(parent["Producto"].ToString()),
                 Titulo = parent["Titulo"].ToString(),
-                UrlImage = parent["UrlImage"].ToString()
+                UrlImage = parent["UrlImage"].ToString(), 
+                Estado = int.Parse(parent["Estado"].ToString())
             };
         }
     }

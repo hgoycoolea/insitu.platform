@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="open\ClientService.cs" />
+    <Compile Include="open\MerchantService.cs" />
     <Compile Include="open\SatelliteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

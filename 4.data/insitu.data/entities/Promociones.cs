@@ -61,5 +61,10 @@ namespace insitu.data.entities
         /// </summary>
         [DataMember]
         public string FechaTermino { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public int Estado { get; set; }
     }
 }

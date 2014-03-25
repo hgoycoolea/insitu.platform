@@ -88,6 +88,7 @@
     <Compile Include="entities\Categorias.cs" />
     <Compile Include="entities\CategoriasClientes.cs" />
     <Compile Include="entities\Clientes.cs" />
+    <Compile Include="entities\ClientesMercantes.cs" />
     <Compile Include="entities\ItemProductos.cs" />
     <Compile Include="entities\Membresias.cs" />
     <Compile Include="entities\Mercantes.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="mappers\CategoriasClientesMapper.cs" />
     <Compile Include="mappers\CategoriasMapper.cs" />
     <Compile Include="mappers\ClientesMapper.cs" />
+    <Compile Include="mappers\ClientesMercantesMapper.cs" />
     <Compile Include="mappers\ItemProductosMapper.cs" />
     <Compile Include="mappers\MembresiasMapper.cs" />
     <Compile Include="mappers\MercantesMapper.cs" />

@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="open\IClientContract.cs" />
+    <Compile Include="open\IMerchantContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="open\ISatelliteContract.cs" />
   </ItemGroup>

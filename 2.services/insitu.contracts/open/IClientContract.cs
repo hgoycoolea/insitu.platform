@@ -10,56 +10,62 @@ using System.Threading.Tasks;
 
 namespace insitu.contracts.open
 {
-    [ServiceContract(Namespace = "http://insitu.com/", Name = "ISatelliteContract", ProtectionLevel = ProtectionLevel.None)]
-    public interface ISatelliteContract
+    [ServiceContract(Namespace = "http://insitu.com/", Name = "IClientContract", ProtectionLevel = ProtectionLevel.None)]
+    public interface IClientContract
     {
         /// <summary>
-        /// Ingresa la posicion desde un celular
+        /// 
         /// </summary>
-        /// <param name="axis"></param>
-        /// <param name="cliente"></param>
-        [OperationContract()]
-        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void AcknowledgePosition(string axis, int mercante);
-        /// <summary>
-        /// Ingresa la rutas desde un celular
-        /// </summary>
-        /// <param name="axis"></param>
-        /// <param name="cliente"></param>
-        [OperationContract()]
-        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void AcknowledgeRutas(string axis, int cliente);
-        /// <summary>
-        /// Metodo que obtiene la ruta de un Mercante
-        /// </summary>
-        /// <param name="Mercante"></param>
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Rutas GetRutas(int ID);
+        List<Promociones> ReadPromociones();
         /// <summary>
-        /// Metodo que obtiene la positions de un Mercante
+        /// 
         /// </summary>
-        /// <param name="ID"></param>
+        /// <param name="Categoria"></param>
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Positions GetPositions(int ID);
+        List<Promociones> ReadPromocionesPorCategorias(List<int> Collection);
         /// <summary>
-        /// Lee todas las posiciones dado un mercante
+        /// 
+        /// </summary>
+        /// <param name="axis"></param>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Promociones> ReadPromocionesPorGeolocation(string axis);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        int CreateVisita(Visitas broker);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        List<Membresias> ReadMembresias();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
+        [OperationContract()]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        int CreateCategoriasClientes(CategoriasClientes broker);
+        /// <summary>
+        /// 
         /// </summary>
         /// <param name="Cliente"></param>
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<Positions> ReadPositions(int Mercante);
-        /// <summary>
-        /// Lee todas las rutas de un cliente
-        /// </summary>
-        /// <param name="Cliente"></param>
-        /// <returns></returns>
-        [OperationContract()]
-        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<Rutas> ReadRutas(int Cliente);
+        List<CategoriasClientes> ReadCategoriasClientes(int Cliente);
     }
 }
