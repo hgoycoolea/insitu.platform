@@ -20,7 +20,7 @@ namespace insitu.data.entities
         /// ID Cliente
         /// </summary>
         [DataMember]
-        public int Cliente { get; set; }
+        public int Mercante { get; set; }
         /// <summary>
         /// ID Producto
         /// </summary>
@@ -62,9 +62,16 @@ namespace insitu.data.entities
         [DataMember]
         public string FechaTermino { get; set; }
         /// <summary>
-        /// 
+        /// Estado de la Promocion.
+        /// 0 : inactivo 
+        /// 1 : activo
         /// </summary>
         [DataMember]
         public int Estado { get; set; }
+        /// <summary>
+        /// Categoria de la promocion
+        /// </summary>
+        [DataMember]
+        public int Categoria { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using insitu.contracts.open;
+﻿using insitu.business.partial;
+using insitu.contracts.open;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,104 +10,182 @@ namespace insitu.services.open
 {
     public class MerchantService : IMerchantContract
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.CreateMercantes(data.entities.Mercantes broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.CreateMercantes(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<data.entities.Mercantes> IMerchantContract.ReadMercantes()
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadMercantes();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.UpdateMercantes(data.entities.Mercantes broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.UpdateMercantes(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int IMerchantContract.DeleteMercantes(int id)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.DeleteMercantes(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.CreateProductos(data.entities.Productos broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.CreateProductos(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<data.entities.Productos> IMerchantContract.ReadProductos()
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadProductos();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.UpdateProductos(data.entities.Productos broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.UpdateProductos(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int IMerchantContract.DeleteProductos(int id)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.DeleteProductos(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.CreatePromociones(data.entities.Promociones broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.CreatePromociones(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<data.entities.Promociones> IMerchantContract.ReadPromociones()
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadPromociones();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
         List<data.entities.Promociones> IMerchantContract.ReadPromocionesPorCategorias(List<int> Collection)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadPromocionesPorCategorias(Collection);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.UpdatePromociones(data.entities.Promociones broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.UpdatePromociones(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int IMerchantContract.DeletePromociones(int id)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.DeletePromociones(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.CreateItemProductos(data.entities.ItemProductos broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.CreateItemProductos(broker);
         }
-
-        List<data.entities.ItemProductos> IMerchantContract.ReadItemProductos(int Mercante)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mercante"></param>
+        /// <returns></returns>
+        List<data.entities.ItemProductos> IMerchantContract.ReadItemProductos(int Venta)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadItemProductos(Venta);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.UpdateItemProductos(data.entities.ItemProductos broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.UpdateItemProductos(broker) ;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int IMerchantContract.DeleteItemProductos(int id)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.DeleteItemProductos(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IMerchantContract.CreateClientesMercantes(data.entities.ClientesMercantes broker)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.CreateClientesMercantes(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         int IMerchantContract.DeleteClientesMercantes(int id)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.DeleteClientesMercantes(id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mercante"></param>
+        /// <returns></returns>
         List<data.entities.ClientesMercantes> IMerchantContract.ReadClientesMercantes(int Mercante)
         {
-            throw new NotImplementedException();
+            return MerchantLogics.ReadClientesMercantes(Mercante);
         }
     }
 }

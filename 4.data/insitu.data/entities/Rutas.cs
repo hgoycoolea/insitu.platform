@@ -31,5 +31,10 @@ namespace insitu.data.entities
         /// </summary>
         [DataMember]
         public string Axis { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public string Speed { get; set; }
     }
 }

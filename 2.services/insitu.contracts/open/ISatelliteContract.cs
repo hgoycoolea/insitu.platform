@@ -28,7 +28,7 @@ namespace insitu.contracts.open
         /// <param name="cliente"></param>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        void AcknowledgeRutas(string axis, int cliente);
+        void AcknowledgeRutas(string axis, string speed, int cliente);
         /// <summary>
         /// Metodo que obtiene la ruta de un Mercante
         /// </summary>

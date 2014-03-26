@@ -19,7 +19,7 @@ namespace insitu.contracts.open
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<Promociones> ReadPromociones();
+        List<Promociones> ReadPromociones(int estado);
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +35,7 @@ namespace insitu.contracts.open
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<Promociones> ReadPromocionesPorGeolocation(string axis);
+        List<Promociones> ReadPromocionesPorGeolocation(string axis, double tolerance);
         /// <summary>
         /// 
         /// </summary>

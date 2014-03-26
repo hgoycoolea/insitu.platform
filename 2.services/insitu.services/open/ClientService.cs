@@ -1,4 +1,5 @@
-﻿using insitu.contracts.open;
+﻿using insitu.business.partial;
+using insitu.contracts.open;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +10,66 @@ namespace insitu.services.open
 {
     public class ClientService : IClientContract
     {
-        List<data.entities.Promociones> IClientContract.ReadPromociones()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        List<data.entities.Promociones> IClientContract.ReadPromociones(int estado)
         {
-            throw new NotImplementedException();
+            return ClientLogics.ReadPromociones(estado);
         }
-
+        /// <summary> 
+        /// 
+        /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
         List<data.entities.Promociones> IClientContract.ReadPromocionesPorCategorias(List<int> Collection)
         {
-            throw new NotImplementedException();
+            return ClientLogics.ReadPromocionesPorCategorias(Collection);
         }
-
-        List<data.entities.Promociones> IClientContract.ReadPromocionesPorGeolocation(string axis)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="axis"></param>
+        /// <returns></returns>
+        List<data.entities.Promociones> IClientContract.ReadPromocionesPorGeolocation(string axis, double tolerance)
         {
-            throw new NotImplementedException();
+            return ClientLogics.ReadPromocionesPorGeolocation(axis, tolerance);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IClientContract.CreateVisita(data.entities.Visitas broker)
         {
-            throw new NotImplementedException();
+            return ClientLogics.CreateVisita(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         List<data.entities.Membresias> IClientContract.ReadMembresias()
         {
-            throw new NotImplementedException();
+            return ClientLogics.ReadMembresias();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="broker"></param>
+        /// <returns></returns>
         int IClientContract.CreateCategoriasClientes(data.entities.CategoriasClientes broker)
         {
-            throw new NotImplementedException();
+            return ClientLogics.CreateCategoriasClientes(broker);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
         List<data.entities.CategoriasClientes> IClientContract.ReadCategoriasClientes(int Cliente)
         {
-            throw new NotImplementedException();
+            return ClientLogics.ReadCategoriasClientes(Cliente);
         }
     }
 }

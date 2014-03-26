@@ -100,11 +100,6 @@ namespace insitu.data.entities
         /// 
         /// </summary>
         [DataMember]
-        public int Categoria { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
         public int Membresia { get; set; }
     }
 }

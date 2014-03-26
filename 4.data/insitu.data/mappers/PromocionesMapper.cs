@@ -15,7 +15,7 @@ namespace insitu.data.mappers
             return new Promociones()
             {
                 Barra = parent["Barra"].ToString(),
-                Cliente = int.Parse(parent["Cliente"].ToString()),
+                Mercante = int.Parse(parent["Mercante"].ToString()),
                 Cuerpo = parent["Cuerpo"].ToString(),
                 FechaComienzo = parent["FechaComienzo"].ToString(),
                 FechaTermino = parent["FechaTermino"].ToString(),
@@ -24,7 +24,8 @@ namespace insitu.data.mappers
                 Producto = int.Parse(parent["Producto"].ToString()),
                 Titulo = parent["Titulo"].ToString(),
                 UrlImage = parent["UrlImage"].ToString(), 
-                Estado = int.Parse(parent["Estado"].ToString())
+                Estado = int.Parse(parent["Estado"].ToString()), 
+                Categoria = int.Parse(parent["Categoria"].ToString())
             };
         }
     }

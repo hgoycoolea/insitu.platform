@@ -24,9 +24,9 @@ namespace insitu.services.open
         /// </summary>
         /// <param name="axis"></param>
         /// <param name="cliente"></param>
-        public void AcknowledgeRutas(string axis, int cliente)
+        public void AcknowledgeRutas(string axis, string speed, int cliente)
         {
-            SatelliteLogics.AcknowledgeRutas(axis, cliente);
+            SatelliteLogics.AcknowledgeRutas(axis, speed, cliente);
         }
         /// <summary>
         /// 

@@ -17,7 +17,8 @@ namespace insitu.data.mappers
                 Axis = parent["Axis"].ToString(),
                 Cliente = int.Parse(parent["Cliente"].ToString()),
                 Fecha = parent["Fecha"].ToString(),
-                ID = int.Parse(parent["ID"].ToString())
+                ID = int.Parse(parent["ID"].ToString()), 
+                Speed = parent["Speed"].ToString()
             };
         }
     }

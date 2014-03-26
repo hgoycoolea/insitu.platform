@@ -15,7 +15,6 @@ namespace insitu.data.mappers
             return new Mercantes() {
                 Apellido = parent["Apellido"].ToString(),
                 Calle = parent["Calle"].ToString(),
-                Categoria = int.Parse(parent["Categoria"].ToString()),
                 Ciudad = int.Parse(parent["Ciudad"].ToString()),
                 Email = parent["Email"].ToString(),
                 ID = int.Parse(parent["ID"].ToString()),

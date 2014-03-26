@@ -37,14 +37,14 @@ namespace insitu.business.partial
         /// <param name="axis"></param>
         /// <param name="cliente"></param>
         /// <returns></returns>
-        public static int AcknowledgeRutas(string axis, int cliente)
+        public static int AcknowledgeRutas(string axis, string speed, int cliente)
         {
             try
             {
                 using (MsSqlFacade<Rutas, RutasMapper> facade = new MsSqlFacade<Rutas, RutasMapper>())
                 {
                     //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
-                    return facade.Create(new Rutas() { Axis = axis, Cliente = cliente, Fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
+                    return facade.Create(new Rutas() { Axis = axis, Speed = speed, Cliente = cliente, Fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
                 }
             }
             catch

@@ -129,7 +129,7 @@ namespace insitu.contracts.open
         /// <returns></returns>
         [OperationContract()]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        List<ItemProductos> ReadItemProductos(int Mercante);
+        List<ItemProductos> ReadItemProductos(int Venta);
         /// <summary>
         /// 
         /// </summary>
