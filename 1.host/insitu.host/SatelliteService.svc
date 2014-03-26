@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="insitu.services.SatelliteService" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="insitu.services.open.SatelliteService" %>

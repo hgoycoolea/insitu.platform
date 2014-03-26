@@ -30,14 +30,54 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="cl.maia.bus">
-      <HintPath>..\..\..\balloon.platform\Libraries\cl.maia.bus.dll</HintPath>
+    <Reference Include="cl.maia.bus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.bus.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.bus.core">
+      <HintPath>..\..\..\balloon.platform\Libraries\cl.maia.bus.core.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.business.facades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.business.facades.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.business.injectors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.business.injectors.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.core.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.data.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.data.core.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.mappers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.data.mappers.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.procedures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.data.procedures.dll</HintPath>
+    </Reference>
+    <Reference Include="cl.maia.data.wrappers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\cl.maia.data.wrappers.dll</HintPath>
     </Reference>
     <Reference Include="cl.maia.mail">
       <HintPath>..\..\Libraries\cl.maia.mail.dll</HintPath>
     </Reference>
     <Reference Include="cl.maia.security">
       <HintPath>..\..\..\balloon.platform\Libraries\cl.maia.security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\balloon.platform\Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -55,9 +95,7 @@
     <Compile Include="AcknowledgePosition.cs" />
     <Compile Include="AcknowledgeRutas.cs" />
     <Compile Include="ReadRutas.cs" />
-    <Compile Include="GetPositions.cs" />
     <Compile Include="ReadPositions.cs" />
-    <Compile Include="GetRutas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

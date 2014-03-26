@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="insitu.services.MerchantService" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="insitu.services.open.MerchantService" %>
