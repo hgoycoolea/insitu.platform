@@ -94,6 +94,8 @@
   <ItemGroup>
     <Compile Include="AcknowledgePosition.cs" />
     <Compile Include="AcknowledgeRutas.cs" />
+    <Compile Include="ReadPromocionesPorGeolocation.cs" />
+    <Compile Include="ReadPromocionesPorCategorias.cs" />
     <Compile Include="ReadRutas.cs" />
     <Compile Include="ReadPositions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

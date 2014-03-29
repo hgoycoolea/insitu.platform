@@ -67,6 +67,8 @@
     <Content Include="ReadPositions.ashx" />
     <Content Include="ReadRutas.ashx" />
     <Content Include="AcknowledgeRutas.ashx" />
+    <Content Include="ReadPromocionesPorGeolocation.ashx" />
+    <Content Include="ReadPromocionesPorCategorias.ashx" />
     <None Include="Properties\PublishProfiles\insitu.bus.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

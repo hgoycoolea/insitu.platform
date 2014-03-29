@@ -111,7 +111,7 @@ namespace insitu.business.partial
                             /// DO NOTHING ::
                         }
                     }
-                    if (MerchantCandidatesNear.Count > 0)
+                    if (MerchantCandidatesNear.Count >= 0)
                     {
                         /// another facade call O(n) = n^2 + 1
                         using (MsSqlFacade<Promociones, PromocionesMapper> facade = new MsSqlFacade<Promociones, PromocionesMapper>())
@@ -134,10 +134,10 @@ namespace insitu.business.partial
                     return null;
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 /// in case that fails, we give an empty list
-                return null;
+                return new List<Promociones>() { new Promociones(){ Mercante = -1, Cuerpo = ex.ToString() }};
             }
         }
         /// <summary>
