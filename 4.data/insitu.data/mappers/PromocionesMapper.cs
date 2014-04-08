@@ -25,7 +25,8 @@ namespace insitu.data.mappers
                 Titulo = parent["Titulo"].ToString(),
                 UrlImage = parent["UrlImage"].ToString(), 
                 Estado = int.Parse(parent["Estado"].ToString()), 
-                Categoria = int.Parse(parent["Categoria"].ToString())
+                Categoria = int.Parse(parent["Categoria"].ToString()),
+                Barrio = int.Parse(parent["Barrio"].ToString())
             };
         }
     }

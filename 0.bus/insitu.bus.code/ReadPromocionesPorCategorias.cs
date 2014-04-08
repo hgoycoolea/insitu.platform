@@ -29,6 +29,7 @@ namespace insitu.bus.code
                 Dictionary<string, string> Collection = cl.maia.bus.Utils.ContextForm.ProcessNativeEncryptedForm(context.Request.Form);
                 /// new expando object
                 string categorias = string.Empty;
+                string barrio = string.Empty;
                 /// foreach string for the value collection
                 foreach (KeyValuePair<string, string> kvp in Collection)
                 {
@@ -37,13 +38,18 @@ namespace insitu.bus.code
                     {
                         categorias = kvp.Value;
                     }
+                    /// value for the parse id
+                    if (kvp.Key == "__b")
+                    {
+                        barrio = kvp.Value;
+                    }
                 }
                 /// this will give me the categories i am looking for
                 string[] categorias_split = categorias.Split(',');
                 /// we convert the categorias into integers
                 List<int> categorias_int = categorias_split.Select(int.Parse).ToList();
                 /// json
-                string json =  JsonConvert.SerializeObject(ClientLogics.ReadPromocionesPorCategorias(categorias_int));
+                string json =  JsonConvert.SerializeObject(ClientLogics.ReadPromocionesPorCategorias(categorias_int,int.Parse(barrio)));
                 /// context response
                 context.Response.Write(json);
             }

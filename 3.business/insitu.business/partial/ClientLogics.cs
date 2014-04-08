@@ -37,7 +37,7 @@ namespace insitu.business.partial
         /// </summary>
         /// <param name="Collection"></param>
         /// <returns></returns>
-        public static List<data.entities.Promociones> ReadPromocionesPorCategorias(List<int> Collection)
+        public static List<data.entities.Promociones> ReadPromocionesPorMercante(int Mercante)
         {
             try
             {
@@ -45,7 +45,29 @@ namespace insitu.business.partial
                 {
                     // we now select all the promotions that are active but we make it into a linear research
                     // thus is not woow efficient is enought for it's end. 
-                    return facade.Read().Where(p => Collection.Contains(p.Categoria)).ToList<Promociones>();
+                    return facade.Read().Where(p => p.Mercante == Mercante).ToList<Promociones>();
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
+        public static List<data.entities.Promociones> ReadPromocionesPorCategorias(List<int> Collection, int Barrio)
+        {
+            try
+            {
+                using (MsSqlFacade<Promociones, PromocionesMapper> facade = new MsSqlFacade<Promociones, PromocionesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Read().Where(p => Collection.Contains(p.Categoria) && p.Barrio == Barrio).ToList<Promociones>();
                 }
             }
             catch
@@ -59,7 +81,7 @@ namespace insitu.business.partial
         /// </summary>
         /// <param name="axis"></param>
         /// <returns></returns>
-        public static List<data.entities.Promociones> ReadPromocionesPorGeolocation(string axis, double tolerance)
+        public static List<data.entities.Promociones> ReadPromocionesPorGeolocation(string axis, double tolerance, int Barrio)
         {
             try
             {
@@ -117,7 +139,7 @@ namespace insitu.business.partial
                         using (MsSqlFacade<Promociones, PromocionesMapper> facade = new MsSqlFacade<Promociones, PromocionesMapper>())
                         {
                             /// this returns the promotions whre the merchant are near the tolerance given by the user
-                            return facade.Read().Where(p => MerchantCandidatesNear.Contains(p.Mercante)).ToList<Promociones>();
+                            return facade.Read().Where(p => MerchantCandidatesNear.Contains(p.Mercante) && p.Barrio == Barrio).ToList<Promociones>();
                         }
                     }
                     else

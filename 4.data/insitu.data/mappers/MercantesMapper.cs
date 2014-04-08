@@ -30,7 +30,8 @@ namespace insitu.data.mappers
                 UrlImageHome = parent["UrlImageHome"].ToString(),
                 Membresia = int.Parse(parent["Membresia"].ToString()),
                 UUID = parent["UUID"].ToString(),
-                WebSite = parent["WebSite"].ToString()
+                WebSite = parent["WebSite"].ToString(), 
+                Barrio = int.Parse(parent["Barrio"].ToString())
             };
         }
     }

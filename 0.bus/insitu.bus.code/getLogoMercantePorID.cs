@@ -13,7 +13,7 @@ using System.Web;
 
 namespace insitu.bus.code
 {
-    public class ReadPromocionesPorGeolocation : IHttpHandler
+    public class getLogoMercantePorID : IHttpHandler
     {
         /// <summary>
         /// 
@@ -32,24 +32,14 @@ namespace insitu.bus.code
                 /// foreach string for the value collection
                 foreach (KeyValuePair<string, string> kvp in Collection)
                 {
-                    /// value for the axis
-                    if (kvp.Key == "__a")
+                    /// value for the parse id
+                    if (kvp.Key == "__m")
                     {
-                        dynamic_obj.axis = kvp.Value;
-                    }
-                    /// value for the tolerance
-                    if (kvp.Key == "__t")
-                    {
-                        dynamic_obj.tolerance = kvp.Value;
-                    }
-                    /// value for the tolerance
-                    if (kvp.Key == "__b")
-                    {
-                        dynamic_obj.barrio = kvp.Value;
+                        dynamic_obj.mercante = kvp.Value;
                     }
                 }
                 /// json
-                string json =  JsonConvert.SerializeObject(ClientLogics.ReadPromocionesPorGeolocation(dynamic_obj.axis, double.Parse(dynamic_obj.tolerance),int.Parse(dynamic_obj.barrio)));
+                string json =  SatelliteLogics.getLogoMercantePorID(int.Parse(dynamic_obj.mercante));
                 /// context response
                 context.Response.Write(json);
             }

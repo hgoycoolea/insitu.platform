@@ -14,6 +14,50 @@ namespace insitu.business.partial
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
+        public static List<data.entities.Mercantes> ReadMercantesPorMembresias(List<int> Membresias)
+        {
+            try
+            {
+                using (MsSqlFacade<Mercantes, MercantesMapper> facade = new MsSqlFacade<Mercantes, MercantesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Read().Where(p => Membresias.Contains(p.Membresia)).ToList<Mercantes>();
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
+        public static data.entities.Mercantes getMercantePorID(int Mercante)
+        {
+            try
+            {
+                using (MsSqlFacade<Mercantes, MercantesMapper> facade = new MsSqlFacade<Mercantes, MercantesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Get(Mercante);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="broker"></param>
         /// <returns></returns>
         public static int CreateMercantes(data.entities.Mercantes broker)

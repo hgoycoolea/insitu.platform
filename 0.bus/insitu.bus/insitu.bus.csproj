@@ -69,6 +69,12 @@
     <Content Include="AcknowledgeRutas.ashx" />
     <Content Include="ReadPromocionesPorGeolocation.ashx" />
     <Content Include="ReadPromocionesPorCategorias.ashx" />
+    <Content Include="getLogoMercantePorID.ashx" />
+    <Content Include="getDistanceToPromociones.ashx" />
+    <Content Include="ReadMercantesPorMembresia.ashx" />
+    <Content Include="getMercantePorID.ashx" />
+    <Content Include="ReadBarriosPorCiudad.ashx" />
+    <Content Include="ReadPromocionesPorMercante.ashx" />
     <None Include="Properties\PublishProfiles\insitu.bus.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

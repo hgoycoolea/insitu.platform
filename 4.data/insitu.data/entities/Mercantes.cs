@@ -101,5 +101,10 @@ namespace insitu.data.entities
         /// </summary>
         [DataMember]
         public int Membresia { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public int Barrio { get; set; }
     }
 }

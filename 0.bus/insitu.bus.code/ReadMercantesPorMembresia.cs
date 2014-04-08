@@ -13,7 +13,7 @@ using System.Web;
 
 namespace insitu.bus.code
 {
-    public class ReadPromocionesPorGeolocation : IHttpHandler
+    public class ReadMercantesPorMembresia : IHttpHandler
     {
         /// <summary>
         /// 
@@ -28,35 +28,29 @@ namespace insitu.bus.code
                 /// Dictionary Collection Native Encryption
                 Dictionary<string, string> Collection = cl.maia.bus.Utils.ContextForm.ProcessNativeEncryptedForm(context.Request.Form);
                 /// new expando object
-                dynamic dynamic_obj = new ExpandoObject();
+                string membresias = string.Empty;
                 /// foreach string for the value collection
                 foreach (KeyValuePair<string, string> kvp in Collection)
                 {
                     /// value for the axis
-                    if (kvp.Key == "__a")
+                    if (kvp.Key == "__m")
                     {
-                        dynamic_obj.axis = kvp.Value;
-                    }
-                    /// value for the tolerance
-                    if (kvp.Key == "__t")
-                    {
-                        dynamic_obj.tolerance = kvp.Value;
-                    }
-                    /// value for the tolerance
-                    if (kvp.Key == "__b")
-                    {
-                        dynamic_obj.barrio = kvp.Value;
+                        membresias = kvp.Value;
                     }
                 }
+                /// this will give me the categories i am looking for
+                string[] membresias_split = membresias.Split(',');
+                /// we convert the categorias into integers
+                List<int> membresias_int = membresias_split.Select(int.Parse).ToList();
                 /// json
-                string json =  JsonConvert.SerializeObject(ClientLogics.ReadPromocionesPorGeolocation(dynamic_obj.axis, double.Parse(dynamic_obj.tolerance),int.Parse(dynamic_obj.barrio)));
+                string json =  JsonConvert.SerializeObject(MerchantLogics.ReadMercantesPorMembresias(membresias_int));
                 /// context response
                 context.Response.Write(json);
             }
             catch(Exception ex)
             {
                 /// context response as an error
-                context.Response.Write("{\"acknowledge\": {\"response\": \""+ex.ToString()+"\"}");
+                context.Response.Write("{\"acknowledge\": {\"response\": \"" + ex.ToString() + "\"}");
             }
         }
         /// <summary>

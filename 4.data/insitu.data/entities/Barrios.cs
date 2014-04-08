@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace insitu.data.entities
 {
     [DataContract]
-    public class Clientes : Entity
+    public class Barrios : Entity
     {
         /// <summary>
         /// 
@@ -20,36 +20,26 @@ namespace insitu.data.entities
         /// 
         /// </summary>
         [DataMember]
-        public string NumeroTelefono { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public string Email { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
-        public int Sexo { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [DataMember]
         public string Nombre { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public string Apellido { get; set; }
+        public int Pais { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public string UUID { get; set; }
+        public int Ciudad { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public int Barrio { get; set; }
+        public string Radio { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public string AxisCentro { get; set; }
     }
 }
