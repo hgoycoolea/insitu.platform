@@ -88,11 +88,13 @@
     <Compile Include="entities\Barrios.cs" />
     <Compile Include="entities\Categorias.cs" />
     <Compile Include="entities\CategoriasClientes.cs" />
+    <Compile Include="entities\Ciudad.cs" />
     <Compile Include="entities\Clientes.cs" />
     <Compile Include="entities\ClientesMercantes.cs" />
     <Compile Include="entities\ItemProductos.cs" />
     <Compile Include="entities\Membresias.cs" />
     <Compile Include="entities\Mercantes.cs" />
+    <Compile Include="entities\Pais.cs" />
     <Compile Include="entities\Positions.cs" />
     <Compile Include="entities\Productos.cs" />
     <Compile Include="entities\Promociones.cs" />
@@ -104,6 +106,8 @@
     <Compile Include="mappers\ClientesMapper.cs" />
     <Compile Include="mappers\ClientesMercantesMapper.cs" />
     <Compile Include="mappers\BarriosMapper.cs" />
+    <Compile Include="mappers\CiudadMapper.cs" />
+    <Compile Include="mappers\PaisMapper.cs" />
     <Compile Include="mappers\ItemProductosMapper.cs" />
     <Compile Include="mappers\MembresiasMapper.cs" />
     <Compile Include="mappers\MercantesMapper.cs" />

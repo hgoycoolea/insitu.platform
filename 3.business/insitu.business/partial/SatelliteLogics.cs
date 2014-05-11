@@ -16,6 +16,86 @@ namespace insitu.business.partial
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="axis"></param>
+        /// <param name="cliente"></param>
+        public static string getPaisPorID(int id)
+        {
+            try
+            {
+                using (MsSqlFacade<Pais, PaisMapper> facade = new MsSqlFacade<Pais, PaisMapper>())
+                {
+                    //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
+                    return facade.Read().Single(p => p.ID == id).Nombre;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="axis"></param>
+        /// <param name="cliente"></param>
+        public static string getCiudadPorID(int id)
+        {
+            try
+            {
+                using (MsSqlFacade<Ciudad, CiudadMapper> facade = new MsSqlFacade<Ciudad, CiudadMapper>())
+                {
+                    //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
+                    return facade.Read().Single(p => p.ID == id).Nombre;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mercante"></param>
+        /// <returns></returns>
+        public static List<data.entities.Categorias> ReadCategories()
+        {
+            try
+            {
+                using (MsSqlFacade<Categorias, CategoriasMapper> facade = new MsSqlFacade<Categorias, CategoriasMapper>())
+                {
+                    //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
+                    return facade.Read();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="client"></param>
+        /// <returns></returns>
+        public static List<data.entities.CategoriasClientes> ReadClientCategories(int client)
+        {
+            try
+            {
+                using (MsSqlFacade<CategoriasClientes, CategoriasClientesMapper> facade = new MsSqlFacade<CategoriasClientes, CategoriasClientesMapper>())
+                {
+                    //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
+                    return facade.Read().Where(p=>p.Cliente == client).ToList<CategoriasClientes>();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="Mercante"></param>
         /// <returns></returns>
         public static List<data.entities.Barrios> ReadBarriosPorCiudad(int Ciudad)
@@ -156,7 +236,7 @@ namespace insitu.business.partial
         /// </summary>
         /// <param name="Mercante"></param>
         /// <returns></returns>
-        public static List<data.entities.Positions> ReadPositions(int Mercante)
+        public static List<data.entities.Positions> ReadPositionsPorMercante(int Mercante)
         {
             try
             {
@@ -164,6 +244,26 @@ namespace insitu.business.partial
                 {
                     //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
                     return facade.Read().Where(p => p.Mercante == Mercante).ToList<Positions>();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mercante"></param>
+        /// <returns></returns>
+        public static List<data.entities.Positions> ReadPositions()
+        {
+            try
+            {
+                using (MsSqlFacade<Positions, PositionsMapper> facade = new MsSqlFacade<Positions, PositionsMapper>())
+                {
+                    //// we use the Collection to build the broker entity on an abstract phase to manage it as a all
+                    return facade.Read().ToList<Positions>();
                 }
             }
             catch

@@ -75,6 +75,12 @@
     <Content Include="getMercantePorID.ashx" />
     <Content Include="ReadBarriosPorCiudad.ashx" />
     <Content Include="ReadPromocionesPorMercante.ashx" />
+    <Content Include="getPaisPorID.ashx" />
+    <Content Include="getCiudadPorID.ashx" />
+    <Content Include="getPositionsPorMercante.ashx" />
+    <Content Include="ReadClientCategories.ashx" />
+    <Content Include="ReadCategories.ashx" />
+    <Content Include="getPromocionPorID.ashx" />
     <None Include="Properties\PublishProfiles\insitu.bus.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

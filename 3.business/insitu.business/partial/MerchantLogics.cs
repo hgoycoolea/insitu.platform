@@ -16,6 +16,28 @@ namespace insitu.business.partial
         /// </summary>
         /// <param name="Collection"></param>
         /// <returns></returns>
+        public static string GetPositionsPorMercante(int id)
+        {
+            try
+            {
+                using (MsSqlFacade<Positions, PositionsMapper> facade = new MsSqlFacade<Positions, PositionsMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Read().Single(p => p.Mercante == id).Axis;
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Collection"></param>
+        /// <returns></returns>
         public static List<data.entities.Mercantes> ReadMercantesPorMembresias(List<int> Membresias)
         {
             try

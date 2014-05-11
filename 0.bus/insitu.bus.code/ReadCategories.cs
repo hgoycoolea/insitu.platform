@@ -10,7 +10,7 @@ using System.Web;
 
 namespace insitu.bus.code
 {
-    public class ReadPositions : IHttpHandler
+    public class ReadCategories : IHttpHandler
     {
         /// <summary>
         /// 
@@ -21,7 +21,7 @@ namespace insitu.bus.code
             try
             {
                 /// json response to the mobile
-                string json = JsonConvert.SerializeObject(SatelliteLogics.ReadPositions());
+                string json = JsonConvert.SerializeObject(SatelliteLogics.ReadCategories());
                 /// context response
                 context.Response.Write(json);
             }

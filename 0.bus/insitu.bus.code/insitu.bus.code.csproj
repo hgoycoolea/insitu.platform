@@ -94,6 +94,12 @@
   <ItemGroup>
     <Compile Include="AcknowledgePosition.cs" />
     <Compile Include="AcknowledgeRutas.cs" />
+    <Compile Include="getPromocionPorID.cs" />
+    <Compile Include="readClientCategories.cs" />
+    <Compile Include="ReadCategories.cs" />
+    <Compile Include="getPositionsPorMercante.cs" />
+    <Compile Include="getCiudadPorID.cs" />
+    <Compile Include="getPaisPorID.cs" />
     <Compile Include="ReadPromocionesPorMercante.cs" />
     <Compile Include="getMercantePorID.cs" />
     <Compile Include="ReadBarriosPorCiudad.cs" />
