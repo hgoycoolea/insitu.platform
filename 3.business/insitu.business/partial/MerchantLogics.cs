@@ -14,6 +14,144 @@ namespace insitu.business.partial
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="Mercante"></param>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
+        public static int UnFollowMercante(int Mercante, int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
+                {
+                    ClientesMercantes entity = facade.Read().Single(p => p.Cliente == Cliente && p.Mercante == Mercante);
+                    ///
+                    if (entity != null)
+                    {
+                        return facade.Delete(entity.ID);
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mercante"></param>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
+        public static int CheckFollower(int Mercante, int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Read().Where(p=> p.Cliente == Cliente && p.Mercante == Mercante).Count();
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int FollowMercante(int Mercante, int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Create(new ClientesMercantes() { Cliente = Cliente, Mercante = Mercante });
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return 0;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static List<Clientes> GetSeguidoresPorMercante(int id)
+        {
+            try
+            {
+                using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
+                {
+                    /// client list to fill
+                    List<Clientes> clientes = new List<Clientes>();
+                    /// first thing is to get the clients form the merchant so we lookup
+                    List<ClientesMercantes> list =  facade.Read().Where(p => p.Mercante == id).ToList<ClientesMercantes>();
+                    /// we now iterate to get the clients
+                    foreach (ClientesMercantes parent in list)
+                    {
+                        /// we release and use disposable
+                        using (MsSqlFacade<Clientes, ClientesMapper> facade1 = new MsSqlFacade<Clientes, ClientesMapper>())
+                        {
+                            /// we now get the client form db
+                            Clientes cliente = facade1.Get(parent.Cliente);
+                            /// we now check for null
+                            if (cliente != null)
+                            {
+                                /// add to client
+                                clientes.Add(cliente);
+                            }
+                        }
+                    }
+                    /// we return the clients
+                    return clientes;
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int GetNumeroSeguidoresPorMercante(int id)
+        {
+            try
+            {
+                using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
+                {
+                    // we now select all the promotions that are active but we make it into a linear research
+                    // thus is not woow efficient is enought for it's end. 
+                    return facade.Read().Where(p=>p.Mercante == id).Count();
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return 0;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="Collection"></param>
         /// <returns></returns>
         public static string GetPositionsPorMercante(int id)

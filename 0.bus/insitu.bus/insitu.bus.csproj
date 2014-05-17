@@ -81,6 +81,15 @@
     <Content Include="ReadClientCategories.ashx" />
     <Content Include="ReadCategories.ashx" />
     <Content Include="getPromocionPorID.ashx" />
+    <Content Include="getNumeroSeguirdoresPorMercante.ashx" />
+    <Content Include="getSeguidoresPorMercante.ashx" />
+    <Content Include="getPerfilCliente.ashx" />
+    <Content Include="savePerfilCliente.ashx" />
+    <Content Include="createCliente.ashx" />
+    <Content Include="getComprasPorCliente.ashx" />
+    <Content Include="updateCliente.ashx" />
+    <Content Include="followMerchant.ashx" />
+    <Content Include="unfollowMerchant.ashx" />
     <None Include="Properties\PublishProfiles\insitu.bus.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

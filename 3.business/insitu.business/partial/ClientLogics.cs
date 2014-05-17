@@ -15,6 +15,167 @@ namespace insitu.business.partial
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+        public static int UpdatePerfilCliente(PerfilClientes cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<PerfilClientes, PerfilClientesMapper> facade = new MsSqlFacade<PerfilClientes, PerfilClientesMapper>())
+                {
+                    return facade.Update(cliente);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+        public static PerfilClientes getPerfilCliente(int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<PerfilClientes, PerfilClientesMapper> facade = new MsSqlFacade<PerfilClientes, PerfilClientesMapper>())
+                {
+                    return facade.Get(Cliente);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+        public static int UpdateCliente(Clientes cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<Clientes, ClientesMapper> facade = new MsSqlFacade<Clientes, ClientesMapper>())
+                {
+                    return facade.Update(cliente);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+        public static int CreateCliente(Clientes cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<Clientes, ClientesMapper> facade = new MsSqlFacade<Clientes, ClientesMapper>())
+                {
+                    
+                    int id =  facade.Create(cliente);
+
+                    using (MsSqlFacade<PerfilClientes, PerfilClientesMapper> facade1 = new MsSqlFacade<PerfilClientes, PerfilClientesMapper>())
+                    {
+                        facade1.Create(new PerfilClientes() { AprendizajeCompras = 0, ToleranciaDistancia = 0, TipoAlerta = 0, Cliente = id });
+                    }
+
+                    return id;
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
+        public static List<ComprasPromociones> getComprasPorCliente(int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper> facade = new MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper>())
+                {
+                    return facade.Read().Where(p => p.Cliente == Cliente).ToList<ComprasPromociones>();
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Compra"></param>
+        /// <param name="Estado"></param>
+        /// <returns></returns>
+        public static int EstadoPromocion(int Compra, int Estado)
+        {
+            try
+            {
+                using (MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper> facade = new MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper>())
+                {
+                    /// we now get the entity
+                    ComprasPromociones entity = facade.Get(Compra);
+                    /// this entity we now update
+                    entity.Estado = Estado;
+                    entity.FechaCambioEstado = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    /// this will return the entity update
+                    return facade.Update(entity);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Promocion"></param>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
+        public static string ComprarPromocion(int Promocion, int Cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper> facade = new MsSqlFacade<ComprasPromociones, ComprasPromocionesMapper>())
+                {
+                    /// this is the guid
+                    string guid = Guid.NewGuid().ToString();
+                    //// we select all the promotion that are active first
+                    facade.Create(new ComprasPromociones() { Cliente = Cliente, Promocion = Promocion, Estado = 0, FechaCambioEstado = "", FechaCompra = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") , Guid = guid});
+                    /// return the guid
+                    return guid;
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return null;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         public static List<data.entities.Promociones> ReadPromociones(int estado)
         {

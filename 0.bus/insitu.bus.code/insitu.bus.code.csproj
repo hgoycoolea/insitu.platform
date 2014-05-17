@@ -94,6 +94,15 @@
   <ItemGroup>
     <Compile Include="AcknowledgePosition.cs" />
     <Compile Include="AcknowledgeRutas.cs" />
+    <Compile Include="unfollowMerchant.cs" />
+    <Compile Include="followMerchant.cs" />
+    <Compile Include="updateCliente.cs" />
+    <Compile Include="getComprasPorCliente.cs" />
+    <Compile Include="getNumeroSeguidoresPorMercante.cs" />
+    <Compile Include="getSeguidoresPorMercante.cs" />
+    <Compile Include="getPerfilCliente.cs" />
+    <Compile Include="savePerfilCliente.cs" />
+    <Compile Include="createCliente.cs" />
     <Compile Include="getPromocionPorID.cs" />
     <Compile Include="readClientCategories.cs" />
     <Compile Include="ReadCategories.cs" />

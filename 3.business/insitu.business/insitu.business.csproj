@@ -97,6 +97,9 @@
     <Compile Include="concrete\CategoriasClientesLogic.cs" />
     <Compile Include="concrete\ClientesMercantesLogic.cs" />
     <Compile Include="concrete\BarriosLogics.cs" />
+    <Compile Include="concrete\ComprasPromocionesLogics.cs" />
+    <Compile Include="concrete\PerfilClientesLogic.cs" />
+    <Compile Include="concrete\SocialClientesLogic.cs" />
     <Compile Include="concrete\MembresiasLogic.cs" />
     <Compile Include="concrete\VisitasLogics.cs" />
     <Compile Include="concrete\VentasLogics.cs" />
