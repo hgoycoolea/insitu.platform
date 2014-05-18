@@ -23,14 +23,17 @@ namespace insitu.business.partial
             {
                 using (MsSqlFacade<ClientesMercantes, ClientesMercantesMapper> facade = new MsSqlFacade<ClientesMercantes, ClientesMercantesMapper>())
                 {
+                    /// client facade read from the list
                     ClientesMercantes entity = facade.Read().Single(p => p.Cliente == Cliente && p.Mercante == Mercante);
-                    ///
+                    /// we now check if the entity is null
                     if (entity != null)
                     {
+                        /// if is null we deleted form the merchant list of followers
                         return facade.Delete(entity.ID);
                     }
                     else
                     {
+                        /// we return a -1 if error
                         return -1;
                     }
                 }

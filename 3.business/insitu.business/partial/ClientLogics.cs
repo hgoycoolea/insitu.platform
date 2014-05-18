@@ -17,6 +17,46 @@ namespace insitu.business.partial
         /// </summary>
         /// <param name="cliente"></param>
         /// <returns></returns>
+        public static int UpdateSocialCliente(SocialClientes cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<SocialClientes, SocialClientesMapper> facade = new MsSqlFacade<SocialClientes, SocialClientesMapper>())
+                {
+                    return facade.Update(cliente);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+        public static int CreateSocialCliente(SocialClientes cliente)
+        {
+            try
+            {
+                using (MsSqlFacade<SocialClientes, SocialClientesMapper> facade = new MsSqlFacade<SocialClientes, SocialClientesMapper>())
+                {
+                    return facade.Create(cliente);
+                }
+            }
+            catch
+            {
+                /// in case that fails, we give an empty list
+                return -1;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         public static int UpdatePerfilCliente(PerfilClientes cliente)
         {
             try
